@@ -22,5 +22,26 @@ const images = [
   {
     url: "https://cdn.pixabay.com/photo/2019/05/17/04/35/lighthouse-4208843_1280.jpg",
     alt: "Lighthouse Coast Sea",
-  }
+  },
 ];
+
+const createGalleryCard = (imageInfo) => {
+  return `
+  <li class="gallery-item">
+    <a href="#">
+      <img src="${imageInfo.url}" alt="${imageInfo.alt}">
+    </a>
+  </li>
+  `;
+};
+
+//* Створення масиву рядків із елементами
+const galleryCardsTemplate = images
+  .map((imgInfo) => createGalleryCard(imgInfo))
+  .join("");
+
+//* Вставка елементів на сторінку (innerHTML/insertAdjacentHTML)
+const galleryListEl = document.querySelector(".gallery");
+
+// galleryListEl.innerHTML = galleryCardsTemplate;
+galleryListEl.insertAdjacentHTML("beforeend", galleryCardsTemplate);
