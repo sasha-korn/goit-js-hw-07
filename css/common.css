@@ -222,10 +222,23 @@ input {
   border-radius: 8px;
 }
 
+#boxes {
+  width: fit-content;
+  /* min-height: fit-content; */
+  margin-left: auto;
+  margin-right: auto;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  row-gap: 44px;
+  column-gap: 44px;
+}
+
 #controls {
   margin-bottom: 16px;
   display: flex;
-  column-gap: 16px;
+  column-gap: 44px;
   width: 486px;
   margin-left: auto;
   margin-right: auto;
