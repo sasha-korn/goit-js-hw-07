@@ -19,12 +19,14 @@ function createBoxes() {
   const containerForBoxes = document.querySelector("#boxes");
 
   let side = 30;
+  let boxes = "";
   for (let i = 0; i < amount; i++) {
-    containerForBoxes.insertAdjacentHTML(
-      "beforeend",
-      `<div class="box" style="background-color: ${getRandomHexColor()}; width: ${side}px; height:${side}px"></div>`
-    );
+    boxes += `<div class="box" style="background-color: ${getRandomHexColor()}; width: ${side}px; height:${side}px"></div>`;
     side += 10;
+  }
+
+  if (boxes.length > 0) {
+    containerForBoxes.insertAdjacentHTML("beforeend", boxes);
   }
   /* resetting input field */
   document.querySelector('[type="number"]').value = "";
